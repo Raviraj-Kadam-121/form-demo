@@ -1,0 +1,28 @@
+{
+  "userData": [
+    {
+      "firstName": "",
+      "lastName": "",
+      "selected": "",
+      "gender": "",
+      "check": "",
+      "id": 1
+    },
+    {
+      "firstName": "sdfsf",
+      "lastName": "asda",
+      "selected": "Angular 10",
+      "gender": "male",
+      "check": true,
+      "id": 2
+    },
+    {
+      "firstName": "sds",
+      "lastName": "erefd",
+      "selected": "NodeJS",
+      "gender": "male",
+      "check": true,
+      "id": 3
+    }
+  ]
+}

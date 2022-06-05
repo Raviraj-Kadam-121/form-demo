@@ -1,0 +1,56 @@
+
+<div class="container">
+  <div class="card">
+   <div class="text-center">
+      <h2>Sampal Form</h2>
+   </div>
+   <form [formGroup]="sampleForm" (ngSubmit)="submit()">
+     <div class="form-group">
+       <label class="mandatory">First Name</label><br>
+       <input class="form-control" type="text" formControlName="firstName" placeholder="Enter your first name">
+       <span class="text-danger" *ngIf="sampleForm.controls['firstName'].touched && sampleForm.hasError('required','firstName')">First name is required</span>
+     </div>
+
+     <div class="form-group">
+      <label class="mandatory">Last Name</label><br>
+      <input class="form-control" type="text" formControlName="lastName" placeholder="Enter your last name">
+      <span class="text-danger" *ngIf="sampleForm.controls['lastName'].touched && sampleForm.hasError('required','lastName')">Last name is required</span>
+     </div>
+
+     <div class="form-group">
+       <label class=mandatory>Technical Skill</label><br>
+       <select class="form-select" formControlName="selected">
+         <option value="" selected disabled hidden>Select Technical Skill</option>
+         <option>AngularJS</option>
+         <option>NodeJS</option>
+         <option>Angular 10</option>
+         <option>ReactJS</option>
+       </select>
+       <span class="text-danger" *ngIf="sampleForm.controls['selected'].touched && sampleForm.hasError('required','selected')">Please select Skill, it is required</span>
+     </div>
+
+     <div class="form-group">
+       <label class="mandatory">Gender</label><br>
+       <div class="form-check">
+         <input class="form-check-input" id="male" type="radio" name="gender" value="male" formControlName="gender">
+         <label class="form-check-label" for="male">Male</label>
+      </div>
+       <div class="form-check">
+         <input class="form-check-input" id="female" type="radio" name="gender" value="female" formControlName="gender">
+         <label class="form-check-label" for="female">Female</label>
+      </div>
+     </div>
+
+     <div class="form-group">
+       <div class="form-check" >
+         <input class="form-check-input" type="checkbox" formControlName="check">
+         <label class="form-check-label mandatory">Accept Terms & Conditions</label>
+       </div>
+       <span class="text-danger" *ngIf="sampleForm.controls['check'].dirty && !sampleForm.controls['check'].valid && sampleForm.hasError('required','check')">Accept Terms and Condition, it is required</span>
+     </div><br>
+     <div class="text-center">
+       <button type="submit"  class="btn btn-primary" [disabled]="!sampleForm.valid">Submit</button>
+     </div>
+    </form>
+   </div>
+</div>
